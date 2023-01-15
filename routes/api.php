@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::post('register', 'UsuarioApiController@register');
-Route::post('login', 'UsuarioApiController@authenticate');
+
 
 //Route::group(['middleware' => ['jwt.verify']], function () {
-    Route::post('sesionCiudadano', 'ApiCitasController@sesionCiudadano');
-    Route::post('consulta-tramite', 'ApiCitasController@ObtenerDatosCita');
-    Route::post('validaTieneCita', 'ApiCitasController@validaTieneCita');
-    Route::post('obtenerVentanillas', 'ApiCitasController@obtenerVentanillas');
+    Route::post('createEmployee', [ApiController::class, 'createEmployee']);
+   // Route::post('consulta-tramite', 'ApiCitasController@ObtenerDatosCita');
+    //Route::post('validaTieneCita', 'ApiCitasController@validaTieneCita');
+    //Route::post('obtenerVentanillas', 'ApiCitasController@obtenerVentanillas');
 //});
