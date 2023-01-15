@@ -23,9 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-//Route::group(['middleware' => ['jwt.verify']], function () {
-    Route::post('createEmployee', [ApiController::class, 'createEmployee']);
-   // Route::post('consulta-tramite', 'ApiCitasController@ObtenerDatosCita');
-    //Route::post('validaTieneCita', 'ApiCitasController@validaTieneCita');
-    //Route::post('obtenerVentanillas', 'ApiCitasController@obtenerVentanillas');
-//});
+Route::post('createEmployee', [ApiController::class, 'createEmployee']);
+Route::post('addHoursEmployee', [ApiController::class, 'addHoursEmployee']);
+Route::post('listEmployeesByJobTitle', [ApiController::class, 'listEmployeesByJobTitle']);
+Route::post('getHoursEmployee', [ApiController::class, 'getHoursEmployee']);
+Route::post('getPayEmployee', [ApiController::class, 'getPayEmployee']);

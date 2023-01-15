@@ -16,7 +16,7 @@ class CreateEmployeeWorkedHoursTable extends Migration
         Schema::create('employee_worked_hours', function (Blueprint $table) {
             $table->increments('id');
             $table->date('worked_date');
-            $table->time('worked_hours');
+            $table->float('worked_hours');
             $table->unsignedInteger('employee_id');
             $table->foreign('employee_id')
                 ->references('id')
